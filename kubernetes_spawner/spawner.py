@@ -213,6 +213,8 @@ class KubernetesSpawner(Spawner):
             container.add_volume(vol_name, volume_path)
             new_pod.add_container(container)
 
+            self.log.debug("Pod desc '%s'", new_pod)
+
             self.client.launch_pod(new_pod)
             pod = yield self.wait_for_new_pod()
         else:
