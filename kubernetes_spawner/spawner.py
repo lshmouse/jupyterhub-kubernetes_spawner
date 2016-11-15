@@ -261,7 +261,7 @@ class KubernetesSpawner(Spawner):
         elif self.hub_ip_from_service:
             api_service = self.client.get_service(self.hub_ip_from_service)
             self.log.debug("Api service %s", api_service)
-            ip = api_service.spec.clusterIp
+            ip = api_service.spec.cluster_ip
             port = None
         else:
             return self.hub.api_url
