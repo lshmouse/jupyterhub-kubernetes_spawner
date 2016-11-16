@@ -161,8 +161,8 @@ class Container(V1Container):
 
     def add_default_resources(self):
         self.resources = V1ResourceRequirements()
-        self.resources.requests = {"cpu": 0.25, "memory": "1Gi"}
-        self.resources.limits = {"cpu": 0.25, "memory": "1Gi"}
+        self.resources.requests = {"cpu": 0.25, "memory": "256Mi"}
+        self.resources.limits = {"cpu": 0.25, "memory": "256Mi"}
 
     def add_volume(self, name, path):
         volume_mount = V1VolumeMount()
